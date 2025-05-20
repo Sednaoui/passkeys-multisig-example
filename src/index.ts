@@ -76,12 +76,11 @@ async function main(): Promise<void> {
   const sendUserOperationResponse = await smartAccount.sendUserOperation(
     userOperation, bundlerUrl
   )
+  console.log("Useroperation sent. Waiting to be included.. UserOp hash: " + sendUserOperationResponse.userOperationHash);
 
-  console.log("Useroperation sent. Waiting to be included ......");
   let userOperationReceiptResult = await sendUserOperationResponse.included()
 
   console.log("Useroperation receipt received.")
-  console.log(userOperationReceiptResult)
   if (userOperationReceiptResult.success) {
     console.log("Safe Account deployed with two EOA owners and an NFT is minted. The transaction hash is : " + userOperationReceiptResult.receipt.transactionHash)
   } else {
@@ -143,21 +142,19 @@ async function main(): Promise<void> {
     userOperation2, bundlerUrl
   )
 
-  console.log("Useroperation sent. Waiting to be included ......")
+  console.log("Useroperation sent. Waiting to be included.. UserOp hash: " + sendUserOperationResponse2.userOperationHash);
   //included will return a UserOperationReceiptResult when 
   //useroperation is included onchain
   let userOperationReceiptResult2 = await sendUserOperationResponse2.included()
 
-  console.log("Useroperation receipt received.")
-  console.log(userOperationReceiptResult2)
+  console.log("Useroperation receipt received.");
   if (userOperationReceiptResult2.success) {
     console.log("EOA2 Owner Swapped with WebAuthn Owner. Transaction hash is : " + userOperationReceiptResult2.receipt.transactionHash)
   } else {
     console.log("Useroperation execution failed")
   }
 
-
-  // Mint NFT and sign uwerOp with webAuthn Owner
+  // Mint NFT and sign userOp with webAuthn Owner
 
   let userOperation3 = await smartAccount.createUserOperation(
     [mintNFTMetaTx],
@@ -216,11 +213,10 @@ async function main(): Promise<void> {
     userOperation3, bundlerUrl
   )
 
-  console.log("Useroperation sent. Waiting to be included ......")
+  console.log("Useroperation sent. Waiting to be included.. UserOp hash: " + sendUserOperationResponse3.userOperationHash);
   let userOperationReceiptResult3 = await sendUserOperationResponse3.included()
 
   console.log("Useroperation receipt received.")
-  console.log(userOperationReceiptResult3)
   if (userOperationReceiptResult3.success) {
     console.log("An Nfts were minted, signed by WebAuthn Owner. The transaction hash is : " + userOperationReceiptResult3.receipt.transactionHash)
   } else {

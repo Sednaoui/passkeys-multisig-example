@@ -41,10 +41,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.15.13.tgz#f64277c341150c979e42b00e4ac289290c9df469"
   integrity sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q==
 
-abstractionkit@^0.2.9:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/abstractionkit/-/abstractionkit-0.2.9.tgz#ce028098efde4466b5d589d2434f2ba788108f33"
-  integrity sha512-wI18+ZEnS1rUBDQ8oKDCMwRa14+3oPLHAJRTxbJ7g+/jhLpDaiz+HqwiF2e+AvhgUWJ2XZCaHRqgSOmaX4oj2Q==
+abstractionkit@^0.2.19:
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/abstractionkit/-/abstractionkit-0.2.19.tgz#2cf7077a756a9d7a4cdad67f6230167179698b83"
+  integrity sha512-j+2bPGHc3G/pUhYV38P4V0ilKYGi8cw8uEP1GYbYAGAjs7sJtvJLxgPzg1owU3d2ZZR8CpXSmxaTSklwv3xrHg==
   dependencies:
     ethers "^6.13.2"
     isomorphic-unfetch "^3.1.0"
